@@ -1,0 +1,28 @@
+.card{
+    max-width:800px;
+    background-color:black;
+    border-color:white;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.font-white{
+    color: white;
+}
+
+.font-bold{
+    font-weight:bold;
+}
+
+.img-size{
+    height: 300px;
+    width: 250px;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+  }

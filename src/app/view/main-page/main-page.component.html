@@ -1,0 +1,98 @@
+<div class="center">
+  <mat-accordion>
+    <mat-expansion-panel [expanded]="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title> 自我介紹 </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-card class="card">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title class="font-white"
+              >{{ name }} {{ engName }}</mat-card-title
+            >
+            <mat-card-subtitle class="font-white">
+              職稱 ： {{ position }} <br />
+              現職 ： {{ dutyIn }} <br />
+              生日 ： {{ birth }}({{ zodiacSigns }}) <br />
+              國籍 ： {{ country }} <br />
+              學歷 ： {{ graduateUniversity }} <br />
+              手機 ： {{ tel }} <br />
+              郵件 ： {{ mail }} <br />
+              興趣 ： {{ hobby }} <br />
+              主要技能 ： {{ mainSkill }}
+            </mat-card-subtitle>
+            <img
+              class="img-size"
+              mat-card-xl-image
+              src="./assets/img/20230409_142304.png"
+            />
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content class="font-white">
+          {{ story }}
+        </mat-card-content>
+      </mat-card>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title> 經歷 </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-card class="card">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title class="font-white">經歷</mat-card-title>
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content class="font-white font-bold">
+          <ol>
+            <ng-template ngFor let-item [ngForOf]="experience" let-i="index">
+              <li>{{ item["since"] }} - {{ item["company"] }}</li>
+              {{ item["duty"] }}
+              <ul>
+                <ng-template
+                  ngFor
+                  let-subItem
+                  [ngForOf]="item['skill']"
+                  let-i="index"
+                >
+                  <li>{{ subItem }}</li>
+                </ng-template>
+              </ul>
+            </ng-template>
+          </ol>
+        </mat-card-content>
+      </mat-card>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title> 技能 </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-card class="card">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title class="font-white">技能</mat-card-title>
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content class="font-white font-bold">
+          <ol>
+            <ng-template ngFor let-item [ngForOf]="skills" let-i="index">
+              <li>{{ item["cat"] }}</li>
+              <ul>
+                <ng-template
+                  ngFor
+                  let-subItem
+                  [ngForOf]="item['skill']"
+                  let-i="index"
+                >
+                  <li>{{ subItem }}</li>
+                </ng-template>
+              </ul>
+            </ng-template>
+          </ol>
+        </mat-card-content>
+      </mat-card>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
